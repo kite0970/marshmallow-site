@@ -1,0 +1,50 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+# 1. 개인 설정 및 민감한 정보 (보안 핵심!)
+.env
+.env.local
+.env.*.local
+
+# 2. 패키지 라이브러리 (용량이 크므로 제외)
+node_modules/
+
+# 3. 빌드 결과물 (배포 시 자동 생성되는 폴더)
+dist/
+build/
+
+# 4. Antigravity CLI & Gemini AI 히스토리/캐시
+.gemini/
+.antigravity/
+
+# 5. OS 및 에디터 임시 파일
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# 6. 로그 파일
+*.log
+npm-debug.log*
+yarn-debug.log*

@@ -1,0 +1,584 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%23E8F4FA'/><circle cx='50' cy='50' r='38' fill='%23FFFDF9'/><rect x='34' y='34' width='32' height='32' rx='12' fill='%23FFC5D3'/></svg>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🥣 마시멜로우 시리얼볼 | Soft, Sweet, Together!</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Montserrat:wght@700;800;900&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Three.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header>
+      <nav class="navbar">
+        <a href="#hero" class="nav-brand">
+          <span style="font-size: 1.4rem;">🥣</span>
+          <span>마시멜로우 볼</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="#hero" class="nav-link">홈</a></li>
+          <li><a href="#story" class="nav-link">스토리</a></li>
+          <li><a href="#member-eunjin" class="nav-link">팀원</a></li>
+          <li><a href="#project" class="nav-link">프로젝트</a></li>
+          <li><a href="#ending" class="nav-link">패키지</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- ============================================================
+           SECTION 1: HERO - 3D 시리얼볼 & 우유 위 퐁당 떨어지는 씬
+           ============================================================ -->
+      <section id="hero" class="hero-cereal-section">
+        <div class="container hero-header">
+          <h1 class="hero-title">Soft, Sweet, Together!</h1>
+          <p class="hero-subtitle">각자의 색으로 뭉쳐 더 달콤해지는 우리, 마시멜로우.</p>
+        </div>
+
+        <!-- Three.js Cereal Bowl 3D Viewport -->
+        <div class="container">
+          <div class="bowl-3d-box" id="bowl-box">
+            <canvas id="bowl-canvas"></canvas>
+          </div>
+        </div>
+
+        <a href="#story" class="splash-status-hint">
+          <span>스크롤을 내려 우유 속으로 퐁당</span>
+          <span>↓</span>
+        </a>
+      </section>
+
+      <!-- ============================================================
+           SECTION 2: BRAND STORY - 스푼 패럴랙스 & 유영하는 마시멜로우
+           ============================================================ -->
+      <section id="story" class="story-spoon-section">
+        <div class="container">
+          <p class="story-spoon-copy">
+            "각자의 색으로 뭉쳐 더 달콤해지는 우리, 마시멜로우."
+          </p>
+
+          <div class="spoon-canvas-box">
+            <canvas id="spoon-canvas"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           SECTION 3: TEAM MEMBERS - 스푼 퍼 올리기 연속 풀섹션 (1인 1화면)
+           ============================================================ -->
+
+      <!-- 1. 김은진 (Pink Mellow | 달콤담당) -->
+      <section id="member-eunjin" class="member-fullview-section pink-theme">
+        <div class="member-scoop-card">
+          <!-- Left: 3D Spoon Scooping Pink Marshmallow Visual -->
+          <div class="scoop-visual-stage">
+            <div class="scoop-glow-bg"></div>
+            <svg class="scoop-char-svg" viewBox="0 0 200 200" fill="none">
+              <!-- Silver Spoon Base -->
+              <ellipse cx="100" cy="145" rx="72" ry="32" fill="#E8EDF4" stroke="#D3DCE6" stroke-width="3"/>
+              <ellipse cx="100" cy="143" rx="66" ry="26" fill="#FFFFFF" opacity="0.85"/>
+              <path d="M 160 145 Q 185 160 195 185" stroke="#D3DCE6" stroke-width="8" stroke-linecap="round"/>
+
+              <!-- 3D Pink Marshmallow (김은진 - 안경 미착용, 포근함, 아이디어 핀) -->
+              <defs>
+                <radialGradient id="pinkScoopGrad" cx="35%" cy="30%" r="70%">
+                  <stop offset="0%" stop-color="#FFFFFF"/>
+                  <stop offset="35%" stop-color="#FFC5D3"/>
+                  <stop offset="85%" stop-color="#FF9EB5"/>
+                  <stop offset="100%" stop-color="#E2879D"/>
+                </radialGradient>
+              </defs>
+              <rect x="40" y="45" width="120" height="95" rx="42" fill="url(#pinkScoopGrad)"/>
+              <ellipse cx="80" cy="62" rx="34" ry="14" fill="#FFFFFF" opacity="0.65"/>
+              <!-- Eyes: warm cozy smile (안경 미착용) -->
+              <circle cx="80" cy="94" r="6" fill="#3D3545"/>
+              <circle cx="120" cy="94" r="6" fill="#3D3545"/>
+              <circle cx="82" cy="92" r="2" fill="#FFFFFF"/>
+              <circle cx="122" cy="92" r="2" fill="#FFFFFF"/>
+              <!-- Rosy Cheeks -->
+              <circle cx="66" cy="104" r="8" fill="#FF7395" opacity="0.55"/>
+              <circle cx="134" cy="104" r="8" fill="#FF7395" opacity="0.55"/>
+              <!-- Sweet Smile -->
+              <path d="M 92 108 Q 100 116 108 108" stroke="#3D3545" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+              <!-- Idea Sparkle Pin -->
+              <circle cx="100" cy="38" r="9" fill="#FFE082"/>
+            </svg>
+            <div class="char-hover-emoji" title="아이디어 반짝!">💡</div>
+          </div>
+
+          <!-- Right: Profile Card Content -->
+          <div class="scoop-content-area">
+            <div class="scoop-header-row">
+              <h2 class="scoop-member-name">김은진</h2>
+              <div class="scoop-role-badge">
+                <span>🌸</span>
+                <span>Pink Mellow · 달콤담당</span>
+              </div>
+            </div>
+
+            <div class="scoop-intro-quote">
+              "포근한 온기로 팀을 감싸 안고, 번뜩이는 달콤한 아이디어를 더해요!"
+            </div>
+
+            <div class="scoop-tags-box">
+              <div class="scoop-tag-row">
+                <span class="tag-label"><span>🍡</span><span>좋아하는 음식</span></span>
+                <span class="tag-value">딸기 찹쌀떡 & 마카롱</span>
+              </div>
+              <div class="scoop-tag-row">
+                <span class="tag-label"><span>🧩</span><span>MBTI</span></span>
+                <span class="tag-value">ENFP (재기발랄한 활동가)</span>
+              </div>
+              <div class="scoop-tag-row">
+                <span class="tag-label"><span>✨</span><span>관심사</span></span>
+                <span class="tag-value">창의적 기획 & 브레인스토밍</span>
+              </div>
+            </div>
+
+            <a href="#member-suyeon" class="scroll-next-hint">
+              <span>다음 마시멜로우 퍼 올리기</span>
+              <span>↓</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. 김수연 (Blue Mellow | 몽글담당) -->
+      <section id="member-suyeon" class="member-fullview-section blue-theme">
+        <div class="member-scoop-card">
+          <!-- Left: 3D Spoon Scooping Blue Marshmallow Visual -->
+          <div class="scoop-visual-stage">
+            <div class="scoop-glow-bg"></div>
+            <svg class="scoop-char-svg" viewBox="0 0 200 200" fill="none">
+              <!-- Spoon -->
+              <ellipse cx="100" cy="145" rx="72" ry="32" fill="#E8EDF4" stroke="#D3DCE6" stroke-width="3"/>
+              <ellipse cx="100" cy="143" rx="66" ry="26" fill="#FFFFFF" opacity="0.85"/>
+              <path d="M 160 145 Q 185 160 195 185" stroke="#D3DCE6" stroke-width="8" stroke-linecap="round"/>
+
+              <!-- 3D Blue Marshmallow (김수연 - 둥근 안경 착용, 맑고 차분함) -->
+              <defs>
+                <radialGradient id="blueScoopGrad" cx="35%" cy="30%" r="70%">
+                  <stop offset="0%" stop-color="#FFFFFF"/>
+                  <stop offset="35%" stop-color="#BCE6FF"/>
+                  <stop offset="85%" stop-color="#89CEFC"/>
+                  <stop offset="100%" stop-color="#69B8F0"/>
+                </radialGradient>
+              </defs>
+              <rect x="40" y="45" width="120" height="95" rx="42" fill="url(#blueScoopGrad)"/>
+              <ellipse cx="80" cy="62" rx="34" ry="14" fill="#FFFFFF" opacity="0.7"/>
+              <!-- Eyes behind Round Glasses -->
+              <circle cx="80" cy="94" r="5.5" fill="#2E3747"/>
+              <circle cx="120" cy="94" r="5.5" fill="#2E3747"/>
+              <circle cx="82" cy="92" r="2" fill="#FFFFFF"/>
+              <circle cx="122" cy="92" r="2" fill="#FFFFFF"/>
+              <!-- Round Glasses (둥근 안경 착용) -->
+              <circle cx="80" cy="94" r="14" stroke="#3D4A5E" stroke-width="3" fill="rgba(255,255,255,0.2)"/>
+              <circle cx="120" cy="94" r="14" stroke="#3D4A5E" stroke-width="3" fill="rgba(255,255,255,0.2)"/>
+              <path d="M 94 94 L 106 94" stroke="#3D4A5E" stroke-width="3"/>
+              <circle cx="64" cy="104" r="7" fill="#75C3FF" opacity="0.6"/>
+              <circle cx="136" cy="104" r="7" fill="#75C3FF" opacity="0.6"/>
+              <!-- Calm Smile -->
+              <path d="M 94 112 Q 100 118 106 112" stroke="#2E3747" stroke-width="3" stroke-linecap="round" fill="none"/>
+              <circle cx="140" cy="50" r="7" fill="#9ADCFF"/>
+            </svg>
+            <div class="char-hover-emoji" title="꼼꼼한 설계!">📐</div>
+          </div>
+
+          <div class="scoop-content-area">
+            <div class="scoop-header-row">
+              <h2 class="scoop-member-name">김수연</h2>
+              <div class="scoop-role-badge">
+                <span>💎</span>
+                <span>Blue Mellow · 몽글담당</span>
+              </div>
+            </div>
+
+            <div class="scoop-intro-quote">
+              "차분하고 맑은 시선으로 팀의 중심을 잡고, 꼼꼼한 설계를 완성해요!"
+            </div>
+
+            <div class="scoop-tags-box">
+              <div class="scoop-tag-row">
+                <span class="tag-label"><span>🍡</span><span>좋아하는 음식</span></span>
+                <span class="tag-value">소다맛 젤리 & 민트 마카롱</span>
+              </div>
+              <div class="scoop-tag-row">
+                <span class="tag-label"><span>🧩</span><span>MBTI</span></span>
+                <span class="tag-value">INTJ (용의주도한 전략가)</span>
+              </div>
+              <div class="scoop-tag-row">
+                <span class="tag-label"><span>✨</span><span>관심사</span></span>
+                <span class="tag-value">시스템 아키텍처 & UI 설계</span>
+              </div>
+            </div>
+
+            <a href="#member-hanseo" class="scroll-next-hint">
+              <span>다음 마시멜로우 퍼 올리기</span>
+              <span>↓</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. 이한서 (Yellow Mellow | 통통담당) -->
+      <section id="member-hanseo" class="member-fullview-section yellow-theme">
+        <div class="member-scoop-card">
+          <!-- Left: 3D Spoon Scooping Yellow Marshmallow Visual -->
+          <div class="scoop-visual-stage">
+            <div class="scoop-glow-bg"></div>
+            <svg class="scoop-char-svg" viewBox="0 0 200 200" fill="none">
+              <!-- Spoon -->
+              <ellipse cx="100" cy="145" rx="72" ry="32" fill="#E8EDF4" stroke="#D3DCE6" stroke-width="3"/>
+              <ellipse cx="100" cy="143" rx="66" ry="26" fill="#FFFFFF" opacity="0.85"/>
+              <path d="M 160 145 Q 185 160 195 185" stroke="#D3DCE6" stroke-width="8" stroke-linecap="round"/>
+
+              <!-- 3D Yellow Marshmallow (이한서 - 둥근 안경 착용, 활기 가득) -->
+              <defs>
+                <radialGradient id="yellowScoopGrad" cx="35%" cy="30%" r="70%">
+                  <stop offset="0%" stop-color="#FFFFFF"/>
+                  <stop offset="35%" stop-color="#FFF5A5"/>
+                  <stop offset="85%" stop-color="#FCE679"/>
+                  <stop offset="100%" stop-color="#E8CE52"/>
+                </radialGradient>
+              </defs>
+              <rect x="40" y="45" width="120" height="95" rx="42" fill="url(#yellowScoopGrad)"/>
+              <ellipse cx="80" cy="62" rx="34" ry="14" fill="#FFFFFF" opacity="0.75"/>
+              <!-- Eyes behind Round Glasses -->
+              <circle cx="80" cy="94" r="5.5" fill="#4A3F20"/>
+              <circle cx="120" cy="94" r="5.5" fill="#4A3F20"/>
+              <circle cx="82" cy="92" r="2" fill="#FFFFFF"/>
+              <circle cx="122" cy="92" r="2" fill="#FFFFFF"/>
+              <!-- Round Glasses (둥근 안경 착용) -->
+              <circle cx="80" cy="94" r="14" stroke="#68541D" stroke-width="3" fill="rgba(255,255,255,0.2)"/>
+              <circle cx="120" cy="94" r="14" stroke="#68541D" stroke-width="3" fill="rgba(255,255,255,0.2)"/>
+              <path d="M 94 94 L 106 94" stroke="#68541D" stroke-width="3"/>
+              <circle cx="64" cy="104" r="8" fill="#FFB74D" opacity="0.6"/>
+              <circle cx="136" cy="104" r="8" fill="#FFB74D" opacity="0.6"/>
+              <!-- Joyful Grin -->
+              <path d="M 90 108 Q 100 122 110 108 Z" fill="#4A3F20"/>
+              <circle cx="140" cy="48" r="7" fill="#FFA000"/>
+            </svg>
+            <div class="char-hover-emoji" title="에너지 충전!">⚡</div>
+          </div>
+
+          <div class="scoop-content-area">
+            <div class="scoop-header-row">
+              <h2 class="scoop-member-name">이한서</h2>
+              <div class="scoop-role-badge">
+                <span>☀️</span>
+                <span>Yellow Mellow · 통통담당</span>
+              </div>
+            </div>
+
+            <div class="scoop-intro-quote">
+              "통통 튀는 비타민 활력과 넘치는 에너지로 팀의 텐션을 끌어올려요!"
+            </div>
+
+            <div class="scoop-tags-box">
+              <div class="scoop-tag-row">
+                <span class="tag-label"><span>🍡</span><span>좋아하는 음식</span></span>
+                <span class="tag-value">바나나 푸딩 & 감자튀김</span>
+              </div>
+              <div class="scoop-tag-row">
+                <span class="tag-label"><span>🧩</span><span>MBTI</span></span>
+                <span class="tag-value">ESFP (자유로운 영혼의 연예인)</span>
+              </div>
+              <div class="scoop-tag-row">
+                <span class="tag-label"><span>✨</span><span>관심사</span></span>
+                <span class="tag-value">인터랙티브 모션 & 프로토타이핑</span>
+              </div>
+            </div>
+
+            <a href="#member-nayeon" class="scroll-next-hint">
+              <span>다음 마시멜로우 퍼 올리기</span>
+              <span>↓</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. 정나연 (White Mellow | 퐁신담당) -->
+      <section id="member-nayeon" class="member-fullview-section white-theme">
+        <div class="member-scoop-card">
+          <!-- Left: 3D Spoon Scooping White Marshmallow Visual -->
+          <div class="scoop-visual-stage">
+            <div class="scoop-glow-bg"></div>
+            <svg class="scoop-char-svg" viewBox="0 0 200 200" fill="none">
+              <!-- Spoon -->
+              <ellipse cx="100" cy="145" rx="72" ry="32" fill="#E8EDF4" stroke="#D3DCE6" stroke-width="3"/>
+              <ellipse cx="100" cy="143" rx="66" ry="26" fill="#FFFFFF" opacity="0.85"/>
+              <path d="M 160 145 Q 185 160 195 185" stroke="#D3DCE6" stroke-width="8" stroke-linecap="round"/>
+
+              <!-- 3D White Marshmallow (정나연 - 안경 미착용, 순백, 포근한 서포터) -->
+              <defs>
+                <radialGradient id="whiteScoopGrad" cx="35%" cy="30%" r="70%">
+                  <stop offset="0%" stop-color="#FFFFFF"/>
+                  <stop offset="60%" stop-color="#FAFAFD"/>
+                  <stop offset="90%" stop-color="#E8E6F0"/>
+                  <stop offset="100%" stop-color="#D4D1E3"/>
+                </radialGradient>
+              </defs>
+              <rect x="40" y="45" width="120" height="95" rx="42" fill="url(#whiteScoopGrad)"/>
+              <ellipse cx="80" cy="62" rx="34" ry="14" fill="#FFFFFF" opacity="0.9"/>
+              <!-- Eyes: gentle serene smile (안경 미착용) -->
+              <circle cx="80" cy="94" r="5.5" fill="#3D3A45"/>
+              <circle cx="120" cy="94" r="5.5" fill="#3D3A45"/>
+              <circle cx="82" cy="92" r="2" fill="#FFFFFF"/>
+              <circle cx="122" cy="92" r="2" fill="#FFFFFF"/>
+              <!-- Cheeks -->
+              <circle cx="65" cy="104" r="8" fill="#FFB4C8" opacity="0.55"/>
+              <circle cx="135" cy="104" r="8" fill="#FFB4C8" opacity="0.55"/>
+              <!-- Serene Smile -->
+              <path d="M 92 106 Q 100 114 108 106" stroke="#3D3A45" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+              <!-- Cloud charm -->
+              <circle cx="100" cy="38" r="8" fill="#F0EEF8"/>
+            </svg>
+            <div class="char-hover-emoji" title="포근한 힐링!">☁️</div>
+          </div>
+
+          <div class="scoop-content-area">
+            <div class="scoop-header-row">
+              <h2 class="scoop-member-name">정나연</h2>
+              <div class="scoop-role-badge">
+                <span>☁️</span>
+                <span>White Mellow · 퐁신담당</span>
+              </div>
+            </div>
+
+            <div class="scoop-intro-quote">
+              "순백의 맑은 감성으로 모두의 목소리를 경청하며, 포근하게 이어줘요!"
+            </div>
+
+            <div class="scoop-tags-box">
+              <div class="scoop-tag-row">
+                <span class="tag-label"><span>🍡</span><span>좋아하는 음식</span></span>
+                <span class="tag-value">우유 수플레 팬케이크</span>
+              </div>
+              <div class="scoop-tag-row">
+                <span class="tag-label"><span>🧩</span><span>MBTI</span></span>
+                <span class="tag-value">ISFJ (용감한 수호자)</span>
+              </div>
+              <div class="scoop-tag-row">
+                <span class="tag-label"><span>✨</span><span>관심사</span></span>
+                <span class="tag-value">프론트엔드 최적화 & UX 리서치</span>
+              </div>
+            </div>
+
+            <a href="#project" class="scroll-next-hint">
+              <span>팀 프로젝트 보러가기</span>
+              <span>↓</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           SECTION 4: TEAM PROJECT (AESTHETIC PLACEHOLDER)
+           ============================================================ -->
+      <section id="project" class="project-section">
+        <div class="container">
+          <div class="project-clay-card">
+            <h2 style="font-size: 2.2rem; font-weight: 900; color: #372E44; margin-bottom: 8px;">[프로젝트 타이틀 등록 예정]</h2>
+            <p style="font-size: 1.05rem; color: #787085; font-weight: 700;">
+              마시멜로우 팀의 감성과 기술력이 결합된 이번 학기 대표 과제 프로젝트가 이곳에 등록될 예정입니다.
+            </p>
+
+            <div class="p-mockup-frame">
+              <div class="p-mockup-bar">
+                <div class="p-dots">
+                  <span class="p-dot r"></span>
+                  <span class="p-dot y"></span>
+                  <span class="p-dot g"></span>
+                </div>
+                <div class="p-url">https://marshmallow-cereal.project/preview</div>
+              </div>
+              <div class="p-mockup-body">
+                <span style="font-size: 36px; margin-bottom: 12px;">💻</span>
+                <h3 style="font-size: 1.25rem; font-weight: 800; color: #372E44; margin-bottom: 6px;">프로젝트 데모 화면 및 시연 영상 등록 자리</h3>
+                <p style="font-size: 0.9rem; color: #787085;">
+                  향후 개발될 서비스의 핵심 UI 목업, 대시보드 스크린샷 또는 라이브 인터랙티브 데모가 배치됩니다.
+                </p>
+              </div>
+            </div>
+
+            <div class="p-features-grid">
+              <div class="p-feat-card">
+                <div style="font-size: 1.5rem; margin-bottom: 8px;">✨</div>
+                <h4 style="font-size: 1.05rem; font-weight: 800; color: #372E44; margin-bottom: 6px;">핵심 기능 01</h4>
+                <p style="font-size: 0.88rem; color: #787085;">주요 기능 명칭 및 가치 설명이 들어갈 자리입니다.</p>
+              </div>
+              <div class="p-feat-card">
+                <div style="font-size: 1.5rem; margin-bottom: 8px;">⚡</div>
+                <h4 style="font-size: 1.05rem; font-weight: 800; color: #372E44; margin-bottom: 6px;">핵심 기술 02</h4>
+                <p style="font-size: 0.88rem; color: #787085;">차별화된 기술 솔루션 및 아키텍처가 들어갈 자리입니다.</p>
+              </div>
+              <div class="p-feat-card">
+                <div style="font-size: 1.5rem; margin-bottom: 8px;">🎯</div>
+                <h4 style="font-size: 1.05rem; font-weight: 800; color: #372E44; margin-bottom: 6px;">기대 효과 03</h4>
+                <p style="font-size: 0.88rem; color: #787085;">과제 성과 및 사용자 경험 기대 효과가 들어갈 자리입니다.</p>
+              </div>
+            </div>
+
+            <a href="#ending" class="scroll-next-hint">
+              <span>시리얼 패키지 완성 보러가기</span>
+              <span>↓</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           SECTION 5: ENDING - 마시멜로우 시리얼 패키지 완성 연출 & 연락처
+           ============================================================ -->
+      <section id="ending" class="ending-package-section">
+        <div class="container">
+          <h2 style="font-size: 2.6rem; font-weight: 900; color: #372E44; margin-bottom: 8px;">Marshmallow Cereal Package</h2>
+          <p style="font-size: 1.1rem; color: #787085; font-weight: 700; margin-bottom: 40px;">
+            완성된 시리얼 상자를 클릭하면 팀원 연락처가 펼쳐집니다!
+          </p>
+
+          <div class="package-scene-container">
+            <!-- Complete Stamp Badge -->
+            <div id="complete-stamp" class="complete-stamp-badge">
+              COMPLETE! (100% Sweet)
+            </div>
+
+            <!-- 4 Hopping Marshmallows (jump into box on scroll) -->
+            <svg class="hopping-mallow" style="top: -70px; left: 80px;" viewBox="0 0 60 60">
+              <rect width="60" height="60" rx="22" fill="#FFC5D3"/>
+              <ellipse cx="22" cy="18" rx="14" ry="6" fill="#FFFFFF" opacity="0.7"/>
+              <circle cx="20" cy="34" r="3" fill="#3D3545"/>
+              <circle cx="40" cy="34" r="3" fill="#3D3545"/>
+              <circle cx="14" cy="40" r="4.5" fill="#FF7395" opacity="0.6"/>
+              <circle cx="46" cy="40" r="4.5" fill="#FF7395" opacity="0.6"/>
+              <path d="M 26 40 Q 30 46 34 40" stroke="#3D3545" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+
+            <svg class="hopping-mallow" style="top: -85px; left: 200px;" viewBox="0 0 60 60">
+              <rect width="60" height="60" rx="22" fill="#BCE6FF"/>
+              <ellipse cx="22" cy="18" rx="14" ry="6" fill="#FFFFFF" opacity="0.7"/>
+              <circle cx="20" cy="34" r="3" fill="#2E3747"/>
+              <circle cx="40" cy="34" r="3" fill="#2E3747"/>
+              <circle cx="20" cy="34" r="8" stroke="#3D4A5E" stroke-width="2" fill="none"/>
+              <circle cx="40" cy="34" r="8" stroke="#3D4A5E" stroke-width="2" fill="none"/>
+              <path d="M 28 34 L 32 34" stroke="#3D4A5E" stroke-width="2"/>
+            </svg>
+
+            <svg class="hopping-mallow" style="top: -75px; right: 200px;" viewBox="0 0 60 60">
+              <rect width="60" height="60" rx="22" fill="#FFF5A5"/>
+              <ellipse cx="22" cy="18" rx="14" ry="6" fill="#FFFFFF" opacity="0.75"/>
+              <circle cx="20" cy="34" r="3" fill="#4A3F20"/>
+              <circle cx="40" cy="34" r="3" fill="#4A3F20"/>
+              <circle cx="20" cy="34" r="8" stroke="#68541D" stroke-width="2" fill="none"/>
+              <circle cx="40" cy="34" r="8" stroke="#68541D" stroke-width="2" fill="none"/>
+              <path d="M 28 34 L 32 34" stroke="#68541D" stroke-width="2"/>
+              <path d="M 26 40 Q 30 48 34 40 Z" fill="#4A3F20"/>
+            </svg>
+
+            <svg class="hopping-mallow" style="top: -70px; right: 80px;" viewBox="0 0 60 60">
+              <rect width="60" height="60" rx="22" fill="#FFFFFF" stroke="#E2DFED" stroke-width="2"/>
+              <ellipse cx="22" cy="18" rx="14" ry="6" fill="#FFFFFF" opacity="0.9"/>
+              <circle cx="20" cy="34" r="3" fill="#3D3A45"/>
+              <circle cx="40" cy="34" r="3" fill="#3D3A45"/>
+              <circle cx="14" cy="40" r="4" fill="#FFB4C8" opacity="0.6"/>
+              <circle cx="46" cy="40" r="4" fill="#FFB4C8" opacity="0.6"/>
+              <path d="M 26 40 Q 30 46 34 40" stroke="#3D3A45" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+
+            <!-- The 3D-Styled Pastel Cereal Box Target -->
+            <div id="cereal-box-target" class="cereal-box-interactive" title="상자를 클릭해 보세요!">
+              <svg viewBox="0 0 320 400" fill="none" style="width: 100%; height: 100%; filter: drop-shadow(0 20px 40px rgba(180, 150, 175, 0.3));">
+                <!-- Box Body -->
+                <rect x="20" y="70" width="280" height="310" rx="28" fill="#FFF2F6" stroke="#FFFFFF" stroke-width="4"/>
+                <!-- Front Graphic Plate -->
+                <rect x="40" y="90" width="240" height="270" rx="20" fill="#FFFFFF"/>
+
+                <!-- Front Cereal Art Window -->
+                <circle cx="160" cy="210" r="70" fill="#E8F4FA"/>
+                <!-- 4 Color Cereal Bowl illustration inside window -->
+                <ellipse cx="160" cy="220" rx="50" ry="24" fill="#FFFDF9"/>
+                <circle cx="145" cy="215" r="10" fill="#FFC5D3"/>
+                <circle cx="170" cy="210" r="10" fill="#BCE6FF"/>
+                <circle cx="155" cy="228" r="9" fill="#FFF5A5"/>
+                <circle cx="172" cy="225" r="9" fill="#FFFFFF" stroke="#E2DFED"/>
+
+                <!-- Box Typography -->
+                <text x="160" y="130" text-anchor="middle" font-family="'Montserrat', sans-serif" font-weight="900" font-size="22" fill="#FF6B92">MARSHMALLOW</text>
+                <text x="160" y="150" text-anchor="middle" font-family="'Nunito', sans-serif" font-weight="800" font-size="13" fill="#A39BAF">CRUNCHY & SWEET CEREAL</text>
+                <text x="160" y="325" text-anchor="middle" font-family="'Gowun Dodum', sans-serif" font-weight="800" font-size="13" fill="#787085">Net Wt. 400g (100% Teamwork)</text>
+
+                <!-- Box Top Lid (Open/Closed) -->
+                <path d="M 20 70 L 60 25 L 260 25 L 300 70 Z" fill="#FFE0E8" stroke="#FFFFFF" stroke-width="3"/>
+                <path d="M 60 25 L 160 5 L 260 25 Z" fill="#FFD0DC"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Contacts Drawer (Revealed when cereal box is clicked) -->
+          <div id="contacts-drawer" class="contacts-drawer">
+            <!-- 김은진 -->
+            <div class="contact-card-cereal pink">
+              <div class="c-icon-ring">🌸</div>
+              <h4 style="font-size: 1.15rem; font-weight: 900; color: #372E44;">김은진</h4>
+              <p style="font-size: 0.8rem; font-weight: 800; color: #A39BAF;">달콤담당 · Pink</p>
+              <div class="c-actions">
+                <button class="c-copy-btn" data-copy="eunjin@marshmallow.team">eunjin@marshmallow.team</button>
+                <button class="c-copy-btn" data-copy="@eunjin.mellow">@eunjin.mellow</button>
+              </div>
+            </div>
+
+            <!-- 김수연 -->
+            <div class="contact-card-cereal blue">
+              <div class="c-icon-ring">💎</div>
+              <h4 style="font-size: 1.15rem; font-weight: 900; color: #372E44;">김수연</h4>
+              <p style="font-size: 0.8rem; font-weight: 800; color: #A39BAF;">몽글담당 · Blue</p>
+              <div class="c-actions">
+                <button class="c-copy-btn" data-copy="suyeon@marshmallow.team">suyeon@marshmallow.team</button>
+                <button class="c-copy-btn" data-copy="@suyeon.mellow">@suyeon.mellow</button>
+              </div>
+            </div>
+
+            <!-- 이한서 -->
+            <div class="contact-card-cereal yellow">
+              <div class="c-icon-ring">☀️</div>
+              <h4 style="font-size: 1.15rem; font-weight: 900; color: #372E44;">이한서</h4>
+              <p style="font-size: 0.8rem; font-weight: 800; color: #A39BAF;">통통담당 · Yellow</p>
+              <div class="c-actions">
+                <button class="c-copy-btn" data-copy="hanseo@marshmallow.team">hanseo@marshmallow.team</button>
+                <button class="c-copy-btn" data-copy="@hanseo.mellow">@hanseo.mellow</button>
+              </div>
+            </div>
+
+            <!-- 정나연 -->
+            <div class="contact-card-cereal white">
+              <div class="c-icon-ring">☁️</div>
+              <h4 style="font-size: 1.15rem; font-weight: 900; color: #372E44;">정나연</h4>
+              <p style="font-size: 0.8rem; font-weight: 800; color: #A39BAF;">퐁신담당 · White</p>
+              <div class="c-actions">
+                <button class="c-copy-btn" data-copy="nayeon@marshmallow.team">nayeon@marshmallow.team</button>
+                <button class="c-copy-btn" data-copy="@nayeon.mellow">@nayeon.mellow</button>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top: 60px; padding-top: 24px; border-top: 2px dashed #EAE5F0; font-size: 0.85rem; color: #A39BAF; font-weight: 700;">
+            © 2026 Team Marshmallow Cereal. Soft, Sweet, Together!
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+  </body>
+</html>
